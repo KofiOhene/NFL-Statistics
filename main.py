@@ -8,6 +8,7 @@ from scripts.analysis import top_qbs_passing_touchdowns, top_qbs_passing_yards, 
 from scripts.analysis import top_wrs_receptions, top_wrs_receiving_yards, top_wrs_receiving_tds
 from scripts.analysis import top_rbs_rushing_tds, top_rbs_avg_rushing_yards_per_game
 from scripts.data_processing import load_data, preprocess_data
+from clustering import run_kmeans_clustering, analyze_clusters
 
 if __name__ == "__main__":
     # Define the file paths for the datasets using relative paths
@@ -119,5 +120,9 @@ if __name__ == "__main__":
         print("Yards After Catch column not found. Skipping YAC analysis.")
 
     # Show summary statistics for wide receivers and tight ends
-    print("Summary statistics for Wide Receivers and Tight Ends:")
-    show_summary_statistics(wr_te_df_clean)
+    #print("Summary statistics for Wide Receivers and Tight Ends:")
+    #show_summary_statistics(wr_te_df_clean)
+
+# Assuming you have qb_df_clean loaded
+clustered_qb_df = run_kmeans_clustering(qb_df_clean)
+analyze_clusters(clustered_qb_df)
