@@ -20,7 +20,7 @@ def run_kmeans_clustering(qb_df_clean):
     # Convert non-numeric values like '--' to NaN and handle them
     features_pd.replace('--', np.nan, inplace=True)
 
-    # Option 1: Fill NaN values with 0 (you can also use mean/median if preferred)
+    # Fill NaN values with 0 (you can also use mean/median if preferred)
     features_pd.fillna(0, inplace=True)
 
     # Convert all columns to numeric types (just in case)
@@ -72,7 +72,6 @@ def analyze_clusters(clustered_df):
     print("Cluster Performance Averages:")
     print(cluster_analysis)
 
-    # Display quarterbacks in each cluster
     for cluster_num in clustered_df["Cluster"].unique():
         print(f"Quarterbacks in Cluster {cluster_num}:")
         print(clustered_df[clustered_df["Cluster"] == cluster_num]["Name"].values)

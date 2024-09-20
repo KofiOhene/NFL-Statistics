@@ -120,8 +120,8 @@ if __name__ == "__main__":
         print("Yards After Catch column not found. Skipping YAC analysis.")
 
     # Show summary statistics for wide receivers and tight ends
-    #print("Summary statistics for Wide Receivers and Tight Ends:")
-    #show_summary_statistics(wr_te_df_clean)
+    # print("Summary statistics for Wide Receivers and Tight Ends:")
+    # show_summary_statistics(wr_te_df_clean)
 
 # Assuming you have qb_df_clean loaded
 clustered_qb_df = run_kmeans_clustering(qb_df_clean)
